@@ -1,0 +1,26 @@
+/* Quiet tabs. No coloured fill or glow on the active tab;
+   just a faint neutral tint, like Linear. Other tabs have no background at all.
+   To undo: delete this file and restart Vivaldi. */
+
+#browser .tab-position .tab:not(.active) {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+#browser .tab-position .tab.active {
+  background: color-mix(in srgb, var(--colorFg) 9%, transparent) !important;
+  background-image: none !important;
+  color: var(--colorFg) !important;
+  box-shadow: none !important;
+}
+
+/* Hover: an even fainter tint */
+#browser .tab-position .tab:not(.active):hover {
+  background: color-mix(in srgb, var(--colorFg) 5%, transparent) !important;
+}
+
+/* The outline Vivaldi draws around the selected stack: neutral instead of the accent colour */
+#app .svg-tab-selection .stack-frame,
+#app .svg-tab-selection .inner {
+  stroke: transparent !important;
+}

@@ -1,0 +1,40 @@
+/* macOS only, experimental. Arc-style top. Remove the full-width title strip;
+   keep only the red/yellow/green buttons, floating in the top-left corner.
+   With UI Auto-hide on, Vivaldi puts this strip in its own auto-hide wrapper, not in #header.
+   Main browser windows only: the Settings window and pop-ups keep their normal title bar.
+   To undo: delete this file and restart Vivaldi. */
+
+/* The strip itself: no height, no background, no title text */
+#browser.mac.auto-hide:not(.fullscreen, .is-settingspage, .popup) .auto-hide-wrapper #titlebar,
+#browser.mac:not(.tabs-top, .fullscreen, .is-settingspage, .popup) #header {
+  min-height: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+#browser.mac:not(.fullscreen, .is-settingspage, .popup) #titlebar #pagetitle {
+  display: none !important;
+}
+
+/* The wrapper that holds the strip: stop it reserving a row at the top */
+#browser.mac.auto-hide:not(.fullscreen, .is-settingspage, .popup) .auto-hide-wrapper:has(#titlebar) {
+  min-height: 0 !important;
+  height: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+/* Keep the three window buttons visible and clickable in the corner */
+#browser.mac:not(.fullscreen, .is-settingspage, .popup) .window-buttongroup {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+/* Make room for the buttons at the top of the tab column */
+#browser.mac:not(.tabs-top, .fullscreen, .is-settingspage, .popup) #tabs-tabbar-container {
+  padding-top: 30px !important;
+}

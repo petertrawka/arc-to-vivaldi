@@ -1,0 +1,47 @@
+/* Calmer area above the tabs.
+   Target: two rows on one left edge -> "MAIN v" and the address field.
+   Extension icons, back and reload stay out of sight until you hover over this area.
+   To undo: delete this file and restart Vivaldi. */
+
+/* One shared left edge and tighter spacing for everything above the tabs */
+#tabs-tabbar-container .toolbar-tabbar-before {
+  padding-inline: 12px !important;
+  padding-bottom: 12px !important;
+  row-gap: 6px !important;
+  justify-content: flex-start !important;
+}
+
+/* Workspace row: name and caret together on the left */
+#browser .tabbar-workspace-button > button {
+  justify-content: flex-start !important;
+  gap: 6px !important;
+}
+
+/* Extension icons and the extensions chevron: hidden until the top area is hovered */
+#tabs-tabbar-container .toolbar-extensions,
+#tabs-tabbar-container .ExtensionToggleIcon,
+#tabs-tabbar-container button[name="Back"],
+#tabs-tabbar-container button[name="Reload"],
+#tabs-tabbar-container button[name="Stop"] {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  transition: opacity 150ms ease, max-height 150ms ease !important;
+}
+
+#tabs-tabbar-container .toolbar-tabbar-before:hover .toolbar-extensions,
+#tabs-tabbar-container .toolbar-tabbar-before:hover .ExtensionToggleIcon,
+#tabs-tabbar-container .toolbar-tabbar-before:hover button[name="Back"],
+#tabs-tabbar-container .toolbar-tabbar-before:hover button[name="Reload"],
+#tabs-tabbar-container .toolbar-tabbar-before:hover button[name="Stop"] {
+  max-height: 40px !important;
+  opacity: 1 !important;
+}
+
+/* Address field: full width, quiet background, modest radius */
+#tabs-tabbar-container .UrlBar-AddressField {
+  width: 100% !important;
+  border-radius: 8px !important;
+  background: color-mix(in srgb, var(--colorFg) 6%, transparent) !important;
+  border: none !important;
+}

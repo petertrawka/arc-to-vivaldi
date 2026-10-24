@@ -1,0 +1,27 @@
+/* Override for PeekTabbar.css (from PaRr0tBoY/Awesome-Vivaldi). Needs that file in the same folder.
+   - While the main column is hovered, the stack column keeps 55% of the width (readable names)
+     instead of shrinking to icons.
+   - The slide starts after 0.1 s instead of 0.3 s.
+   To undo: delete this file and restart Vivaldi. */
+
+:root {
+  --peek-hover-main-pct: 45%;
+  --peek-hover-sub-pct: 55%;
+}
+
+html body:is(:has(#tabs-tabbar-container.left), :has(#tabs-tabbar-container.right)):has(#tabs-subcontainer)
+  #tabs-container:hover {
+  max-width: var(--peek-hover-main-pct) !important;
+  min-width: var(--peek-hover-main-pct) !important;
+}
+
+html body:is(:has(#tabs-tabbar-container.left), :has(#tabs-tabbar-container.right)):has(#tabs-container:hover)
+  #tabs-subcontainer {
+  max-width: var(--peek-hover-sub-pct) !important;
+  min-width: var(--peek-hover-sub-pct) !important;
+}
+
+html body:is(:has(#tabs-tabbar-container.left), :has(#tabs-tabbar-container.right))
+  :is(#tabs-container, #tabs-subcontainer) {
+  transition-delay: 100ms !important;
+}

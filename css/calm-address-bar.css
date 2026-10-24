@@ -1,0 +1,87 @@
+/* Calmer address-bar suggestion list, matching the quiet tabs.
+   Theme background instead of near-black, a faint grey tint for the selected row,
+   muted web addresses, and borderless "Switch to Tab" labels.
+   To undo: delete this file and restart Vivaldi. */
+
+#browser .OmniDropdown {
+  background: var(--colorBg) !important;
+  border: 1px solid color-mix(in srgb, var(--colorFg) 10%, transparent) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Selected row: faint neutral tint, normal text colour (no accent fill) */
+#browser .OmniLinkItem--Highlighted:not(.OmniLinkItem--ButtonFocus),
+#browser .OmniLinkItem--Highlighted.OmniLinkItem--TabSwitch.OmniLinkItem--ButtonFocus {
+  background: color-mix(in srgb, var(--colorFg) 9%, transparent) !important;
+  color: var(--colorFg) !important;
+  fill: var(--colorFg) !important;
+}
+
+#browser .OmniLinkItem:not(.OmniLinkItem--Highlighted):hover {
+  background: color-mix(in srgb, var(--colorFg) 5%, transparent) !important;
+}
+
+/* Web addresses: muted text instead of the accent colour */
+#browser .OmniLinkItem-DisplayText .displayUrl,
+#browser .OmniLinkItem--Highlighted:not(.OmniLinkItem--ButtonFocus) .OmniLinkItem-DisplayText .displayUrl {
+  color: color-mix(in srgb, var(--colorFg) 50%, transparent) !important;
+}
+
+/* "Switch to Tab" and "Search" labels: no outline, quiet text */
+#browser .OmniLinkItem-TabSwitchLabel,
+#browser .OmniLinkItem--Highlighted .OmniLinkItem-TabSwitchLabel,
+#browser .OmniLinkItem--Highlighted .OmniLinkItem-Badge,
+#browser .OmniLinkItem-Badge {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: color-mix(in srgb, var(--colorFg) 55%, transparent) !important;
+}
+
+#browser .OmniLinkItem-TabSwitchLabel:hover {
+  background: color-mix(in srgb, var(--colorFg) 9%, transparent) !important;
+  color: var(--colorFg) !important;
+}
+
+/* Wider pop-out when typing in the sidebar address field, so page titles aren't cut off */
+#tabs-tabbar-container .UrlBar-AddressField:focus-within {
+  min-width: 640px !important;
+}
+
+#tabs-tabbar-container .OmniDropdown {
+  min-width: 640px !important;
+}
+
+/* Keep the sidebar open while you type in the address field.
+   Without this, moving the mouse onto the wide pop-out counts as "leaving" the sidebar,
+   auto-hide slides it away, and the address field disappears with it. */
+#browser .auto-hide-wrapper.has-tabbar:has(.UrlBar-AddressField:focus-within) {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ...and keep the main column expanded (PeekTabbar would otherwise fold it to icons) */
+body:has(.UrlBar-AddressField:focus-within) #tabs-tabbar-container #tabs-container {
+  max-width: var(--peek-hover-main-pct, 45%) !important;
+  min-width: var(--peek-hover-main-pct, 45%) !important;
+}
+
+/* Expand the address field in place instead of popping it out elsewhere .
+   It keeps its spot in the sidebar and simply grows to the right over the page.
+#tabs-tabbar-container .toolbar-tabbar-before,
+#tabs-tabbar-container .toolbar-tabbar-before > *,
+#tabs-tabbar-container #tabs-container,
+#browser .auto-hide-wrapper.has-tabbar {
+  overflow: visible !important;
+}
+
+#tabs-tabbar-container .UrlBar-AddressField:focus-within {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  width: 640px !important;
+  max-width: none !important;
+  z-index: 1000 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+}

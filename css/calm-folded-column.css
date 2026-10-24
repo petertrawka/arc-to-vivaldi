@@ -1,0 +1,33 @@
+/* When the main tab column is folded, show icons only (no cut-off text). */
+
+/* PeekTabbar's "collapsed" rules target this container but never declare it, so they never fired. */
+body:is(:has(#tabs-tabbar-container.left), :has(#tabs-tabbar-container.right)) #tabs-container {
+  container-type: inline-size;
+  container-name: tabs-container;
+}
+
+@container tabs-container (max-width: 120px) {
+  /* Tab and stack names, counters and close buttons */
+  .tab .title,
+  .tab .stack-counter,
+  .tab .close {
+    display: none !important;
+  }
+
+  /* Centre each icon in the narrow column */
+  .tab .tab-header {
+    justify-content: center !important;
+    padding-inline: 0 !important;
+  }
+
+  /* Address field and toolbar buttons squeezed into the column */
+  .UrlBar-AddressField,
+  .toolbar-large .ToolbarButton-Button {
+    display: none !important;
+  }
+}
+
+/* when the current tab is not in a stack (no second column), keep the tab bar slimmer. */
+body:has(#tabs-tabbar-container.left):not(:has(#tabs-subcontainer)) #tabs-tabbar-container.left {
+  max-width: 280px !important;
+}

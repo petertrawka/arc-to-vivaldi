@@ -1,0 +1,8 @@
+/* No outline around tab stacks, so they look like the plain tabs in the second column.
+   The tab count on the right still shows which entries are stacks.
+   To undo: delete this file and restart Vivaldi. */
+
+#browser .svg-tab-stack .stack-frame,
+#browser .tab-position.colored .tab:not(.marked) + svg .stack-frame {
+  stroke: transparent !important;
+}
