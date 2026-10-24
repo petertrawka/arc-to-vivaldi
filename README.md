@@ -6,7 +6,11 @@ Make Vivaldi feel calm and Arc-like, pick from 12 Nordic themes, and export your
 
 Tested on **Vivaldi 8.2, macOS** (October 2026). Windows and Linux are untested; shortcuts and paths below are Mac ones.
 
-<!-- HERO: screenshot of the finished browser goes here -->
+![Vivaldi on macOS with this kit: calm sidebar, Workspace name and address field on top, Nordic Fjord theme](screenshots/hero.png)
+
+_Vivaldi on macOS, using this kit (Nordic Dark Fjord theme)._
+
+![Switching between Workspaces, the Vivaldi version of Arc Spaces](screenshots/workspaces.gif)
 
 > **Before you start:** keep Arc installed until everything has moved over and you've checked it in Vivaldi. Nothing in this kit changes or deletes anything in Arc.
 
