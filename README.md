@@ -1,18 +1,24 @@
 # Arc → Vivaldi migration kit
 
-Arc is in maintenance mode, and Vivaldi is the closest thing to it that's still being built. This kit is what I wish I'd had when I moved: a calm, Arc-like look for Vivaldi, a tool that brings your Arc Spaces over, and the traps I hit along the way so you don't.
+Make Vivaldi feel calm and Arc-like, pick from 12 Nordic themes, and export your Arc Spaces into bookmark folders. Plus the migration traps I hit, so you don't.
 
-> Tested on **Vivaldi 8.2 on macOS** (October 2026). Most of it should work on Windows and Linux too; the title-bar tweak is macOS only.
+**[Install the look](#install-the-look-about-15-minutes) · [Move your Spaces](#move-your-spaces) · [Avoid the migration traps](#migration-traps)**
 
-_Screenshots and a short GIF are coming soon._
+Tested on **Vivaldi 8.2, macOS** (October 2026). Windows and Linux are untested; shortcuts and paths below are Mac ones.
+
+<!-- HERO: screenshot of the finished browser goes here -->
+
+> **Before you start:** keep Arc installed until everything has moved over and you've checked it in Vivaldi. Nothing in this kit changes or deletes anything in Arc.
 
 ## What's in it
 
 | | What it does |
 |---|---|
 | `css/` | Seven small style tweaks. Each one works on its own, so take only what you like |
-| `themes/` | 14 "Nordic" themes: warm charcoal and warm paper, with six muted accents (Sage, Fjord, Clay, Sand, Heather, Moss) in dark and light |
-| `tools/arc_to_bookmarks.py` | Turns your Arc Spaces into one bookmarks file, one folder per Space, that Vivaldi can import |
+| `themes/` | 12 Nordic themes: six muted accents (Sage, Fjord, Clay, Sand, Heather, Moss), each in a dark and a light version |
+| `tools/arc_to_bookmarks.py` | Reads your Arc Spaces and writes one bookmarks file (one folder per Space) that Vivaldi can import |
+
+![The 12 Nordic themes in dark and light pairs](screenshots/themes.svg)
 
 It builds on [**Awesome-Vivaldi**](https://github.com/PaRr0tBoY/Awesome-Vivaldi) by PaRr0tBoY. I started from that pack and added these tweaks on top. Go give it a star.
 
@@ -22,7 +28,7 @@ It builds on [**Awesome-Vivaldi**](https://github.com/PaRr0tBoY/Awesome-Vivaldi)
 |---|---|
 | Passwords, history, extensions (main profile) | ✅ Vivaldi's built-in Arc import |
 | Passwords from your *other* Arc profiles | ⚠️ The importer fails on these. See [Traps](#migration-traps) |
-| Spaces and their folders | ⚠️ Not imported. Use `tools/arc_to_bookmarks.py`, then open each folder in its own Workspace |
+| Spaces and their folders | ⚠️ Not imported. The converter turns them into **bookmark folders**; you rebuild Workspaces and tab stacks by hand (about a minute per Space) |
 | Favorites (the icon grid) | ⚠️ Become a bookmarks folder. Web Panels are a good home for the 4-6 you use most |
 | Logins (cookies) | ❌ You sign in again once per site |
 | Extensions you built yourself | ❌ Load them again with **Load unpacked** |
@@ -31,29 +37,43 @@ It builds on [**Awesome-Vivaldi**](https://github.com/PaRr0tBoY/Awesome-Vivaldi)
 
 ## Install the look (about 15 minutes)
 
-1. **Allow style changes.** Open `vivaldi://experiments` and turn on **Allow CSS modifications**. Restart Vivaldi.
-2. **Make a folder** for your style files, for example `~/Documents/vivaldi-css`.
-3. **Add the Awesome-Vivaldi files.** Download [Awesome-Vivaldi](https://github.com/PaRr0tBoY/Awesome-Vivaldi), open `Vivaldi8.0Stable/CSS/`, and copy these into your folder:
-   `PeekTabbar.css`, `AdaptiveBF.css`, `BetterAnimation.css`, `RemoveClutter.css`, `Quietify.css`, `VividQC.css`, `DownloadPanel.css`, `Extensions.css`, `LineBreak.css`.
-   Only the style files: the pack's script mods don't load on Vivaldi 8.2.
-4. **Add the calm tweaks.** Copy everything from this repo's `css/` folder into the same folder.
-5. **Point Vivaldi at it.** Settings → Appearance → **Custom UI Modifications** → Select Folder.
-6. **Import a theme.** Settings → Themes → **Import Theme…**, pick a dark and a light one from `themes/`, then set **Theme Schedule → Operating System** to use them.
-7. **Change the settings** in the checklist below, then restart Vivaldi.
+### 1. Download this kit
 
-### The tweaks
+Click the green **Code** button at the top of this page → **Download ZIP**. Double-click the ZIP in your Downloads folder to unzip it. You'll get a folder called `arc-to-vivaldi-main`.
 
-| File | What it does |
-|---|---|
-| `calm-tabs.css` | No coloured fill or glow on tabs. The active tab gets a faint grey tint, like Linear |
-| `calm-top-area.css` | Above the tabs: just the Workspace name and the address field. Extension icons, back and reload fade in when you hover |
-| `calm-folded-column.css` | When the tab column folds, it shows clean centred icons, no half-cut names |
-| `calm-stacks.css` | No outlines around tab stacks. The number on the right still tells you it's a stack |
-| `calm-address-bar.css` | Quieter suggestion list. The address field grows in place when you click it, instead of jumping |
-| `calm-peek-tabbar-override.css` | Tunes Awesome-Vivaldi's slide-out tab bar: stack names stay readable (45/55 split), faster slide |
-| `calm-titlebar-macos.css` | *macOS, experimental.* Removes the full-width title strip; only the window buttons stay, in the corner |
+### 2. Make a folder for your style files
 
-**Undo any tweak:** delete its file and restart Vivaldi.
+Create a new folder, for example `Documents/vivaldi-css`. Vivaldi reads every `.css` file in it.
+
+### 3. Pick your tweaks
+
+Copy the files you want from `arc-to-vivaldi-main/css/` into `vivaldi-css`:
+
+| File | What it does | Needs Awesome-Vivaldi? |
+|---|---|---|
+| `calm-tabs.css` | No coloured fill or glow on tabs; the active tab gets a faint grey tint, like Linear | No |
+| `calm-stacks.css` | No outlines around tab stacks; the number on the right still marks a stack | No |
+| `calm-address-bar.css` | Quieter suggestion list; the address field grows in place when you click it | No |
+| `calm-top-area.css` | Above the tabs: just the Workspace name and the address field. Extension icons, back and reload fade in on hover | No |
+| `calm-titlebar-macos.css` | *macOS, experimental.* Removes the full-width title strip; only the window buttons stay, in the corner | No |
+| `calm-folded-column.css` | Clean centred icons when the tab column folds | Yes: works with PeekTabbar |
+| `calm-peek-tabbar-override.css` | Tunes the slide-out tab bar: stack names stay readable, faster slide | Yes: needs PeekTabbar |
+
+### 4. Optional: add the Awesome-Vivaldi base (for the slide-out tab bar)
+
+Download [Awesome-Vivaldi](https://github.com/PaRr0tBoY/Awesome-Vivaldi) the same way (Code → Download ZIP), open `Vivaldi8.0Stable/CSS/`, and copy these into `vivaldi-css` too:
+`PeekTabbar.css`, `AdaptiveBF.css`, `BetterAnimation.css`, `RemoveClutter.css`, `Quietify.css`, `VividQC.css`, `DownloadPanel.css`, `Extensions.css`, `LineBreak.css`.
+
+Use only these style files: the pack's script mods don't load on Vivaldi 8.2.
+
+### 5. Switch it on
+
+1. Open `vivaldi://experiments`, turn on **Allow CSS modifications**, restart Vivaldi.
+2. Settings → Appearance → **Custom UI Modifications** → **Select Folder** → pick `vivaldi-css`.
+3. Settings → Themes → **Import Theme…** → pick a dark and a light theme from `arc-to-vivaldi-main/themes/`. Then set **Theme Schedule → Operating System** to that pair.
+4. Change the settings in the checklist below, then restart Vivaldi.
+
+**Undo any tweak:** delete its file from `vivaldi-css` and restart Vivaldi.
 
 ### Settings checklist
 
@@ -65,30 +85,33 @@ Vivaldi can't save these into a file, so set them by hand:
 - **Tabs** → Tab Options: **Show Popup Thumbnails** off, **Show Tab Thumbnails** off
 - **Appearance** → UI Auto-hide: on, with Tab Bar, Panel and Bookmarks Bar ticked · Status Bar: **Status Info Overlay**
 - **General** → Startup: **Last Session**, **Lazy Load Restored Tabs** on (tabs load when you click them, like Arc)
-- **Keyboard** → give **⌘T** to Quick Commands (clear it from New Tab first): you get Arc's "type first, tab later" box
+- **Keyboard** → give **⌘T** to Quick Commands (clear it from New Tab first): Arc's "type first, tab later" box
 - **Keyboard** → give **⌘S** to Tab Bar (clear it from Save Page As first): shows and hides the sidebar, like Arc
 - **Quick Commands** → **Open Links in New Tab** on
 - **Search** → add YouTube with nickname `yt` and URL `https://www.youtube.com/results?search_query=%s`. Then `⌘T` → `yt lofi` works like Arc's tab-to-search
 
-## Bring your Spaces over
+## Move your Spaces
 
-```bash
-python3 tools/arc_to_bookmarks.py ~/Desktop/arc-spaces.html
-```
+The converter **reads** Arc's sidebar file and **writes** one bookmarks file. It doesn't change anything in Arc. It needs Python 3, which comes with most Macs; if Terminal says `python3: command not found`, install it from [python.org](https://www.python.org/downloads/).
 
-It only *reads* Arc's sidebar file and prints how many links each Space has. Then:
-
-1. Vivaldi → File → **Import from Applications or Bookmark Files** → **Bookmarks HTML File** → pick `arc-spaces.html`.
-2. For each Space, create a **Workspace** with the same name.
-3. In that Workspace, right-click a folder in **Bookmarks → Imported → Arc Spaces** → **Open in New Tab**. Vivaldi only opens links directly inside the folder you click, so open each sub-folder separately.
-4. Select the tabs (click the first, shift-click the last) → right-click → **Stack Tabs** → right-click the stack → **Rename**. Now it behaves like an Arc folder.
-5. Right-click the stack → **Pin Tab Stack** so it stays put.
+1. Open **Terminal** (⌘Space, type Terminal).
+2. Paste this and press Enter (it assumes the kit is unzipped in Downloads):
+   ```bash
+   python3 ~/Downloads/arc-to-vivaldi-main/tools/arc_to_bookmarks.py ~/Desktop/arc-spaces.html
+   ```
+   It prints how many links each Space has, and saves `arc-spaces.html` on your Desktop.
+3. Vivaldi → File → **Import from Applications or Bookmark Files** → **Bookmarks HTML File** → pick `arc-spaces.html`.
+4. For each Space, create a **Workspace** with the same name.
+5. In that Workspace, right-click a folder in **Bookmarks → Imported → Arc Spaces** → **Open in New Tab**. Vivaldi only opens links directly inside the folder you click, so open each sub-folder separately.
+6. Select the tabs (click the first, shift-click the last) → right-click → **Stack Tabs** → right-click the stack → **Rename**. Now it behaves like an Arc folder.
+7. Right-click the stack → **Pin Tab Stack** so it stays put.
 
 ## Migration traps
 
 **⌘W can delete your pinned tabs.** In Arc, ⌘W on a pinned tab just put it away. In Vivaldi, with "Allow Closing in Pinned Stacks" on, ⌘W removes tabs from your stacks for good. Keep it **off**. If it already happened, press **⇧⌘T** repeatedly to bring tabs back.
 
-**Passwords from other Arc profiles.** The Arc importer handles your main profile only. Picking another profile or folder fails with "Login Data file not found". What works: in Arc, switch to a Space that uses that profile, open `arc://password-manager/settings`, **Download file**, then in Vivaldi open `vivaldi://password-manager/settings` → **Import**. Delete the CSV afterwards, because it holds your passwords in plain text.
+**Passwords from other Arc profiles.** The Arc importer handles your main profile only; picking another profile fails with "Login Data file not found". What works: in Arc, switch to a Space that uses that profile, open `arc://password-manager/settings`, **Download file**, then in Vivaldi open `vivaldi://password-manager/settings` → **Import**.
+> ⚠️ **That file holds all your passwords in plain text.** Delete it, and empty the Bin, as soon as the import is done.
 
 **New tabs come out pinned.** A tab you open while you're inside a pinned stack inherits the pin. No setting changes this; it's how Vivaldi works. Right-click → unpin, or open new tabs from a normal tab.
 

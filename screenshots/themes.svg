@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="1200" height="780" fill="#e9e7e2"/>
+<text x="40" y="30" font-size="15" fill="#55585b">Nordic themes · dark and light pairs</text>
+<rect x="40" y="50" width="520" height="96" rx="12" fill="#1d1f21"/>
+<rect x="40" y="50" width="150" height="96" rx="12" fill="#25282a"/>
+<rect x="178" y="50" width="12" height="96" fill="#25282a"/>
+<rect x="54" y="68" width="122" height="22" rx="6" fill="#d8d5cf" fill-opacity="0.09"/>
+<rect x="62" y="76" width="70" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.8"/>
+<rect x="62" y="102" width="90" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<rect x="62" y="120" width="60" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<text x="212" y="90" font-size="20" font-weight="600" fill="#d8d5cf">Nordic Dark Sage</text>
+<text x="212" y="116" font-size="13" fill="#d8d5cf" fill-opacity="0.6">#1d1f21 · #d8d5cf</text>
+<circle cx="520" cy="98.0" r="16" fill="#8ea596"/>
+<text x="520" y="128.0" font-size="10" text-anchor="middle" fill="#d8d5cf" fill-opacity="0.6">#8ea596</text>
+<rect x="640" y="50" width="520" height="96" rx="12" fill="#f3f1ec"/>
+<rect x="640" y="50" width="150" height="96" rx="12" fill="#e7e4de"/>
+<rect x="778" y="50" width="12" height="96" fill="#e7e4de"/>
+<rect x="654" y="68" width="122" height="22" rx="6" fill="#2e3133" fill-opacity="0.09"/>
+<rect x="662" y="76" width="70" height="6" rx="3" fill="#2e3133" fill-opacity="0.8"/>
+<rect x="662" y="102" width="90" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<rect x="662" y="120" width="60" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<text x="812" y="90" font-size="20" font-weight="600" fill="#2e3133">Nordic Light Sage</text>
+<text x="812" y="116" font-size="13" fill="#2e3133" fill-opacity="0.6">#f3f1ec · #2e3133</text>
+<circle cx="1120" cy="98.0" r="16" fill="#9fb4a8"/>
+<text x="1120" y="128.0" font-size="10" text-anchor="middle" fill="#2e3133" fill-opacity="0.6">#9fb4a8</text>
+<rect x="40" y="170" width="520" height="96" rx="12" fill="#1d1f21"/>
+<rect x="40" y="170" width="150" height="96" rx="12" fill="#25282a"/>
+<rect x="178" y="170" width="12" height="96" fill="#25282a"/>
+<rect x="54" y="188" width="122" height="22" rx="6" fill="#d8d5cf" fill-opacity="0.09"/>
+<rect x="62" y="196" width="70" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.8"/>
+<rect x="62" y="222" width="90" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<rect x="62" y="240" width="60" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<text x="212" y="210" font-size="20" font-weight="600" fill="#d8d5cf">Nordic Dark Fjord</text>
+<text x="212" y="236" font-size="13" fill="#d8d5cf" fill-opacity="0.6">#1d1f21 · #d8d5cf</text>
+<circle cx="520" cy="218.0" r="16" fill="#8aaab4"/>
+<text x="520" y="248.0" font-size="10" text-anchor="middle" fill="#d8d5cf" fill-opacity="0.6">#8aaab4</text>
+<rect x="640" y="170" width="520" height="96" rx="12" fill="#f3f1ec"/>
+<rect x="640" y="170" width="150" height="96" rx="12" fill="#e7e4de"/>
+<rect x="778" y="170" width="12" height="96" fill="#e7e4de"/>
+<rect x="654" y="188" width="122" height="22" rx="6" fill="#2e3133" fill-opacity="0.09"/>
+<rect x="662" y="196" width="70" height="6" rx="3" fill="#2e3133" fill-opacity="0.8"/>
+<rect x="662" y="222" width="90" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<rect x="662" y="240" width="60" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<text x="812" y="210" font-size="20" font-weight="600" fill="#2e3133">Nordic Light Fjord</text>
+<text x="812" y="236" font-size="13" fill="#2e3133" fill-opacity="0.6">#f3f1ec · #2e3133</text>
+<circle cx="1120" cy="218.0" r="16" fill="#9db6c0"/>
+<text x="1120" y="248.0" font-size="10" text-anchor="middle" fill="#2e3133" fill-opacity="0.6">#9db6c0</text>
+<rect x="40" y="290" width="520" height="96" rx="12" fill="#1d1f21"/>
+<rect x="40" y="290" width="150" height="96" rx="12" fill="#25282a"/>
+<rect x="178" y="290" width="12" height="96" fill="#25282a"/>
+<rect x="54" y="308" width="122" height="22" rx="6" fill="#d8d5cf" fill-opacity="0.09"/>
+<rect x="62" y="316" width="70" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.8"/>
+<rect x="62" y="342" width="90" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<rect x="62" y="360" width="60" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<text x="212" y="330" font-size="20" font-weight="600" fill="#d8d5cf">Nordic Dark Clay</text>
+<text x="212" y="356" font-size="13" fill="#d8d5cf" fill-opacity="0.6">#1d1f21 · #d8d5cf</text>
+<circle cx="520" cy="338.0" r="16" fill="#b8907a"/>
+<text x="520" y="368.0" font-size="10" text-anchor="middle" fill="#d8d5cf" fill-opacity="0.6">#b8907a</text>
+<rect x="640" y="290" width="520" height="96" rx="12" fill="#f3f1ec"/>
+<rect x="640" y="290" width="150" height="96" rx="12" fill="#e7e4de"/>
+<rect x="778" y="290" width="12" height="96" fill="#e7e4de"/>
+<rect x="654" y="308" width="122" height="22" rx="6" fill="#2e3133" fill-opacity="0.09"/>
+<rect x="662" y="316" width="70" height="6" rx="3" fill="#2e3133" fill-opacity="0.8"/>
+<rect x="662" y="342" width="90" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<rect x="662" y="360" width="60" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<text x="812" y="330" font-size="20" font-weight="600" fill="#2e3133">Nordic Light Clay</text>
+<text x="812" y="356" font-size="13" fill="#2e3133" fill-opacity="0.6">#f3f1ec · #2e3133</text>
+<circle cx="1120" cy="338.0" r="16" fill="#c4a08c"/>
+<text x="1120" y="368.0" font-size="10" text-anchor="middle" fill="#2e3133" fill-opacity="0.6">#c4a08c</text>
+<rect x="40" y="410" width="520" height="96" rx="12" fill="#1d1f21"/>
+<rect x="40" y="410" width="150" height="96" rx="12" fill="#25282a"/>
+<rect x="178" y="410" width="12" height="96" fill="#25282a"/>
+<rect x="54" y="428" width="122" height="22" rx="6" fill="#d8d5cf" fill-opacity="0.09"/>
+<rect x="62" y="436" width="70" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.8"/>
+<rect x="62" y="462" width="90" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<rect x="62" y="480" width="60" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<text x="212" y="450" font-size="20" font-weight="600" fill="#d8d5cf">Nordic Dark Sand</text>
+<text x="212" y="476" font-size="13" fill="#d8d5cf" fill-opacity="0.6">#1d1f21 · #d8d5cf</text>
+<circle cx="520" cy="458.0" r="16" fill="#b9a682"/>
+<text x="520" y="488.0" font-size="10" text-anchor="middle" fill="#d8d5cf" fill-opacity="0.6">#b9a682</text>
+<rect x="640" y="410" width="520" height="96" rx="12" fill="#f3f1ec"/>
+<rect x="640" y="410" width="150" height="96" rx="12" fill="#e7e4de"/>
+<rect x="778" y="410" width="12" height="96" fill="#e7e4de"/>
+<rect x="654" y="428" width="122" height="22" rx="6" fill="#2e3133" fill-opacity="0.09"/>
+<rect x="662" y="436" width="70" height="6" rx="3" fill="#2e3133" fill-opacity="0.8"/>
+<rect x="662" y="462" width="90" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<rect x="662" y="480" width="60" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<text x="812" y="450" font-size="20" font-weight="600" fill="#2e3133">Nordic Light Sand</text>
+<text x="812" y="476" font-size="13" fill="#2e3133" fill-opacity="0.6">#f3f1ec · #2e3133</text>
+<circle cx="1120" cy="458.0" r="16" fill="#c6b591"/>
+<text x="1120" y="488.0" font-size="10" text-anchor="middle" fill="#2e3133" fill-opacity="0.6">#c6b591</text>
+<rect x="40" y="530" width="520" height="96" rx="12" fill="#1d1f21"/>
+<rect x="40" y="530" width="150" height="96" rx="12" fill="#25282a"/>
+<rect x="178" y="530" width="12" height="96" fill="#25282a"/>
+<rect x="54" y="548" width="122" height="22" rx="6" fill="#d8d5cf" fill-opacity="0.09"/>
+<rect x="62" y="556" width="70" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.8"/>
+<rect x="62" y="582" width="90" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<rect x="62" y="600" width="60" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<text x="212" y="570" font-size="20" font-weight="600" fill="#d8d5cf">Nordic Dark Heather</text>
+<text x="212" y="596" font-size="13" fill="#d8d5cf" fill-opacity="0.6">#1d1f21 · #d8d5cf</text>
+<circle cx="520" cy="578.0" r="16" fill="#a395ad"/>
+<text x="520" y="608.0" font-size="10" text-anchor="middle" fill="#d8d5cf" fill-opacity="0.6">#a395ad</text>
+<rect x="640" y="530" width="520" height="96" rx="12" fill="#f3f1ec"/>
+<rect x="640" y="530" width="150" height="96" rx="12" fill="#e7e4de"/>
+<rect x="778" y="530" width="12" height="96" fill="#e7e4de"/>
+<rect x="654" y="548" width="122" height="22" rx="6" fill="#2e3133" fill-opacity="0.09"/>
+<rect x="662" y="556" width="70" height="6" rx="3" fill="#2e3133" fill-opacity="0.8"/>
+<rect x="662" y="582" width="90" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<rect x="662" y="600" width="60" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<text x="812" y="570" font-size="20" font-weight="600" fill="#2e3133">Nordic Light Heather</text>
+<text x="812" y="596" font-size="13" fill="#2e3133" fill-opacity="0.6">#f3f1ec · #2e3133</text>
+<circle cx="1120" cy="578.0" r="16" fill="#b1a5ba"/>
+<text x="1120" y="608.0" font-size="10" text-anchor="middle" fill="#2e3133" fill-opacity="0.6">#b1a5ba</text>
+<rect x="40" y="650" width="520" height="96" rx="12" fill="#1d1f21"/>
+<rect x="40" y="650" width="150" height="96" rx="12" fill="#25282a"/>
+<rect x="178" y="650" width="12" height="96" fill="#25282a"/>
+<rect x="54" y="668" width="122" height="22" rx="6" fill="#d8d5cf" fill-opacity="0.09"/>
+<rect x="62" y="676" width="70" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.8"/>
+<rect x="62" y="702" width="90" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<rect x="62" y="720" width="60" height="6" rx="3" fill="#d8d5cf" fill-opacity="0.45"/>
+<text x="212" y="690" font-size="20" font-weight="600" fill="#d8d5cf">Nordic Dark Moss</text>
+<text x="212" y="716" font-size="13" fill="#d8d5cf" fill-opacity="0.6">#1d1f21 · #d8d5cf</text>
+<circle cx="520" cy="698.0" r="16" fill="#8c9a76"/>
+<text x="520" y="728.0" font-size="10" text-anchor="middle" fill="#d8d5cf" fill-opacity="0.6">#8c9a76</text>
+<rect x="640" y="650" width="520" height="96" rx="12" fill="#f3f1ec"/>
+<rect x="640" y="650" width="150" height="96" rx="12" fill="#e7e4de"/>
+<rect x="778" y="650" width="12" height="96" fill="#e7e4de"/>
+<rect x="654" y="668" width="122" height="22" rx="6" fill="#2e3133" fill-opacity="0.09"/>
+<rect x="662" y="676" width="70" height="6" rx="3" fill="#2e3133" fill-opacity="0.8"/>
+<rect x="662" y="702" width="90" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<rect x="662" y="720" width="60" height="6" rx="3" fill="#2e3133" fill-opacity="0.45"/>
+<text x="812" y="690" font-size="20" font-weight="600" fill="#2e3133">Nordic Light Moss</text>
+<text x="812" y="716" font-size="13" fill="#2e3133" fill-opacity="0.6">#f3f1ec · #2e3133</text>
+<circle cx="1120" cy="698.0" r="16" fill="#9daa88"/>
+<text x="1120" y="728.0" font-size="10" text-anchor="middle" fill="#2e3133" fill-opacity="0.6">#9daa88</text>
+</svg>
