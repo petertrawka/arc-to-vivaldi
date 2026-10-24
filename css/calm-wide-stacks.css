@@ -1,0 +1,47 @@
+/* calm-wide-stacks.css: more room when a tab stack opens its second column, and icons that never move.
+   - Two columns: the sidebar is 420px. The first column is a 42px icon rail, 168px while you hover it,
+     so stack names fit; the second column keeps about 250px for page titles. One column stays as it was.
+   - The icons sit at exactly the same spot whether the first column is open or folded, and they don't
+     drift up or down while it folds.
+   Needs PeekTabbar.css (Awesome-Vivaldi). Assumes the calm-top-area.css layout above the tabs:
+   workspace name, one row of buttons, the address field. With more toolbar rows, raise 138px.
+   To try another width, change the three 420px values. To undo: delete this file and restart Vivaldi. */
+
+html:root {
+  --peek-collapsed-pct: 10%;   /* 42px */
+  --peek-expanded-pct: 90%;
+  --peek-hover-main-pct: 40%;
+  --peek-hover-sub-pct: 60%;
+}
+
+body:has(#tabs-subcontainer) #app #browser #tabs-tabbar-container.left {
+  width: 420px !important;
+  min-width: 420px !important;
+  max-width: 420px !important;
+}
+
+/* The top area keeps one height at every width (except while you type in the address field, so its
+   suggestion list can drop down). Without this, at in-between widths its buttons wrap onto extra rows
+   and the tab icons jump down for a moment while the column folds. */
+#app #browser #tabs-tabbar-container .toolbar-tabbar-before:not(:focus-within) {
+  height: 138px !important;
+  overflow-y: clip !important;
+  overflow-x: visible !important;
+}
+
+html body #app #browser #tabs-tabbar-container .toolbar-tabbar-before .toolbar-extensions {
+  flex: 1000 1 0 !important;
+  max-width: 96px !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Folded: icons keep their normal left padding instead of being centred, so they don't shift sideways */
+@container tabs-container (max-width: 120px) {
+  #app #browser #tabs-container .tab .tab-header {
+    justify-content: flex-start !important;
+    padding-left: 6px !important;
+    padding-right: 0 !important;
+  }
+}

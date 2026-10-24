@@ -1,0 +1,8 @@
+/* no-nav-buttons.css: removes Back, Forward and Reload from the sidebar.
+   For people who use ⌘[ / ⌘] (or mouse gestures) and ⌘R anyway. In a narrow sidebar these buttons
+   tend to move just as you reach for them.
+   To undo: delete this file and restart Vivaldi. */
+
+#app #browser #tabs-tabbar-container .button-toolbar:has(> button:is([data-name="Back"], [data-name="Forward"], [data-name="Reload"], [data-name="Stop"])) {
+  display: none !important;
+}

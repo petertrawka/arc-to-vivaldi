@@ -1,0 +1,185 @@
+/* calm-polish.css: an Apple-style polish pass for the tab sidebar.
+   Small grey workspace label, one title size, quiet tab counts, titles that fade instead of cutting off,
+   one spacing rhythm (12px outside, 8px between, 16px between sections), a fainter divider, a proper
+   "+" button, no bounce on the sidebar slide, and a reduce-motion fallback. Colours are not changed.
+   Works on its own; pairs well with calm-top-area.css and the PeekTabbar files.
+   To undo: delete this file and restart Vivaldi. */
+
+:root {
+  --polish-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --polish-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --polish-faint: color-mix(in srgb, var(--colorFg) 5%, transparent);
+  --polish-muted: color-mix(in srgb, var(--colorFg) 50%, transparent);
+}
+
+/* ── Hierarchy: workspace name becomes a small grey section label, like Finder's sidebar ── */
+#browser .tabbar-workspace-button .button-title {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--polish-muted) !important;
+}
+
+/* ── Type: one size for every tab title; active tab is marked by its background, not bold
+   (bold text is wider, so cut-off titles would shift when you switch tabs) ── */
+#browser .tab .title {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+/* Long titles fade out at the right edge instead of stopping mid-letter */
+#browser .tab .title:not(.editing) {
+  mask-image: linear-gradient(to left, transparent 0, #fff 24px) !important;
+}
+
+/* ── Tab counts: quiet grey numbers, no pill; digits line up ── */
+#browser .tab .stack-counter,
+#browser .tab.active .stack-counter {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--polish-muted) !important;
+  font-size: 11px !important;
+  font-variant-numeric: tabular-nums !important;
+  padding: 0 2px !important;
+}
+
+/* ── Rows: one corner radius in both columns ── */
+#browser .tab-position .tab {
+  border-radius: 8px !important;
+}
+
+/* ── Top area: one spacing rhythm (12px outside, 8px between) ── */
+#browser #tabs-tabbar-container .toolbar-tabbar-before {
+  row-gap: 8px !important;
+}
+
+#browser #tabs-tabbar-container .UrlBar-AddressField {
+  min-height: 32px !important;
+}
+
+/* Note: Vivaldi marks toolbar buttons with data-name="…" (not name="…"), checked on the live sidebar. */
+
+/* The big gap above the tabs was an empty "Spacer" item placed after the address field. Removed. */
+#app #browser #tabs-tabbar-container .toolbar-tabbar-before .button-toolbar:has(> button[data-name="Spacer"]) {
+  display: none !important;
+}
+
+/* 16px between the address field and the first tab (Apple: more space between sections than inside them) */
+#app #browser #tabs-tabbar-container .toolbar-tabbar-before {
+  padding-bottom: 16px !important;
+}
+
+/* Keep the ▾ tabs button row from wrapping: the flexible gap may shrink */
+#app #browser #tabs-tabbar-container .toolbar-tabbar-before > .toolbar-spacer-flexible {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+#app #browser #tabs-tabbar-container .toolbar-tabbar-before > .toolbar-spacer-flexible > button {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+/* Extension icons: live on the ▾ row (there is room now) and only fade in/out on hover.
+   They never take or give back space, so nothing moves under the mouse. (Before, showing them pushed
+   the address field down, hiding them pulled it back up, and the two fought: the icons blinked.) */
+#app #browser #tabs-tabbar-container .toolbar-tabbar-before .toolbar-extensions {
+  display: flex !important;
+  max-height: none !important;
+  overflow: visible !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 150ms var(--polish-ease-out) !important;
+}
+
+#app #browser #tabs-tabbar-container .toolbar-tabbar-before:hover .toolbar-extensions {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* ── Divider between stacks and loose tabs: same inset as the rows, fainter ── */
+#browser #tabs-tabbar-container .separator hr {
+  width: calc(100% - 16px) !important;
+  margin-inline: auto !important;
+  opacity: 0.1 !important;
+}
+
+/* ── New tab "+": a real 32px button with a hover tint ── */
+#browser #tabs-tabbar-container .newtab > button,
+#browser #tabs-tabbar-container .button-ntp {
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  margin-inline: auto !important;
+  border-radius: 8px !important;
+  opacity: 0.55 !important;
+  transition: opacity 120ms ease, background-color 120ms ease !important;
+}
+
+/* ── Second column: same surface as the first, separated by a hairline instead of a card ── */
+#browser #tabs-tabbar-container #tabs-subcontainer {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border-left: 1px solid color-mix(in srgb, var(--colorFg) 8%, transparent) !important;
+}
+
+/* ── Hover tints: soft fade, real mouse only ── */
+@media (hover: hover) and (pointer: fine) {
+  #browser .tab-position .tab {
+    transition: background-color 120ms ease !important;
+  }
+
+  #browser #tabs-tabbar-container .newtab > button:hover,
+  #browser #tabs-tabbar-container .button-ntp:hover {
+    opacity: 1 !important;
+    background: var(--polish-faint) !important;
+  }
+}
+
+/* ── Sidebar slide: no bounce. In with an iOS drawer curve, out quicker ── */
+#browser .auto-hide-wrapper.left.show,
+#browser .auto-hide-wrapper.right.show,
+#browser .auto-hide-wrapper.top.show,
+#browser .auto-hide-wrapper.bottom.show,
+body:has(#vivaldi-tooltip:hover) #app #browser .auto-hide-wrapper.has-tabbar.show {
+  transition: transform 200ms var(--polish-ease-drawer) 0s !important;
+}
+
+#browser .auto-hide-wrapper.has-tabbar.left:not(.show),
+#browser .auto-hide-wrapper.has-tabbar.right:not(.show),
+#browser .auto-hide-wrapper.has-tabbar.top:not(.show),
+#browser .auto-hide-wrapper.has-tabbar.bottom:not(.show) {
+  transition: transform 150ms var(--polish-ease-out) 0s !important;
+}
+
+/* ── Stack column opening/closing: strong ease-out both ways (was ease-in), keeps the 0.1 s
+   delay that stops it opening when the mouse just passes over ── */
+#browser #tabs-tabbar-container #tabs-container,
+#browser #tabs-tabbar-container #tabs-subcontainer {
+  transition: min-width 160ms var(--polish-ease-out) 100ms,
+              max-width 160ms var(--polish-ease-out) 100ms !important;
+}
+
+/* ── Typing in the sidebar address field (calm-address-bar.css + PeekTabbar): the two columns could ask
+   for 45% + 82% = 127% of the width. Give the second column the matching share. ── */
+body:has(.UrlBar-AddressField:focus-within) #browser #tabs-tabbar-container #tabs-subcontainer {
+  max-width: var(--peek-hover-sub-pct, 55%) !important;
+  min-width: var(--peek-hover-sub-pct, 55%) !important;
+}
+
+/* ── Reduce motion (System Settings → Accessibility → Display): no sliding, instant columns ── */
+@media (prefers-reduced-motion: reduce) {
+  #app #browser .auto-hide-wrapper.left.show,
+  #app #browser .auto-hide-wrapper.right.show,
+  #app #browser .auto-hide-wrapper.top.show,
+  #app #browser .auto-hide-wrapper.bottom.show,
+  #app #browser .auto-hide-wrapper.has-tabbar:not(.show),
+  body:has(#vivaldi-tooltip:hover) #app #browser .auto-hide-wrapper.has-tabbar.show.show,
+  #app #browser #tabs-tabbar-container #tabs-container,
+  #app #browser #tabs-tabbar-container #tabs-subcontainer {
+    transition: none !important;
+  }
+}

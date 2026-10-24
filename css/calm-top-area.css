@@ -20,9 +20,9 @@
 /* Extension icons and the extensions chevron: hidden until the top area is hovered */
 #tabs-tabbar-container .toolbar-extensions,
 #tabs-tabbar-container .ExtensionToggleIcon,
-#tabs-tabbar-container button[name="Back"],
-#tabs-tabbar-container button[name="Reload"],
-#tabs-tabbar-container button[name="Stop"] {
+#tabs-tabbar-container button[data-name="Back"],
+#tabs-tabbar-container button[data-name="Reload"],
+#tabs-tabbar-container button[data-name="Stop"] {
   max-height: 0 !important;
   opacity: 0 !important;
   overflow: hidden !important;
@@ -31,9 +31,9 @@
 
 #tabs-tabbar-container .toolbar-tabbar-before:hover .toolbar-extensions,
 #tabs-tabbar-container .toolbar-tabbar-before:hover .ExtensionToggleIcon,
-#tabs-tabbar-container .toolbar-tabbar-before:hover button[name="Back"],
-#tabs-tabbar-container .toolbar-tabbar-before:hover button[name="Reload"],
-#tabs-tabbar-container .toolbar-tabbar-before:hover button[name="Stop"] {
+#tabs-tabbar-container .toolbar-tabbar-before:hover button[data-name="Back"],
+#tabs-tabbar-container .toolbar-tabbar-before:hover button[data-name="Reload"],
+#tabs-tabbar-container .toolbar-tabbar-before:hover button[data-name="Stop"] {
   max-height: 40px !important;
   opacity: 1 !important;
 }
