@@ -1,5 +1,7 @@
 # Arc → Vivaldi migration kit
 
+> **Arc shuts down on 22 December 2026.** After that you can't sign in to your Arc account, and its data is deleted. The Browser Company's own path is Dia. If you'd rather keep a sidebar browser that isn't built around AI, this kit gets you to Vivaldi.
+
 Make Vivaldi feel calm and Arc-like, pick from 12 Nordic themes, and export your Arc Spaces into bookmark folders. Plus the migration traps I hit, so you don't.
 
 **[Install the look](#install-the-look-about-15-minutes) · [Move your Spaces](#move-your-spaces) · [Avoid the migration traps](#migration-traps)**
@@ -12,7 +14,7 @@ _Vivaldi on macOS, using this kit (Nordic Dark Fjord theme)._
 
 ![Switching between Workspaces, the Vivaldi version of Arc Spaces](screenshots/workspaces.gif)
 
-> **Before you start:** keep Arc installed until everything has moved over and you've checked it in Vivaldi. Nothing in this kit changes or deletes anything in Arc.
+> **Before you start:** do the move **before 22 December**, while Arc still works. Keep Arc installed until you've checked everything in Vivaldi. Nothing in this kit changes or deletes anything in Arc.
 
 ## What's in it
 
