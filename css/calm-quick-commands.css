@@ -1,0 +1,185 @@
+/* calm-quick-commands.css: Quick Commands (⌘T / ⌘E) made solid and quiet, matching the calm sidebar.
+   Solid panel (VividQC.css from Awesome-Vivaldi makes it 91% see-through, so page text shows behind
+   your results), an inset grey pill for the selected row, one 16px left edge, plain grey counts and
+   dates instead of pills, and no animation, because it opens many times a day.
+   Works with or without VividQC.css (the "html body" prefix wins whatever the load order).
+   To undo: delete this file and restart Vivaldi. */
+
+/* ---------- Panel ---------- */
+html body .modal-wrapper:has(.quick-command-container) {
+  position: fixed !important;
+  left: 50% !important;
+  top: 14vh !important;
+  transform: translateX(-50%) !important;
+  width: 650px !important;
+  max-width: calc(100vw - 48px) !important;
+  max-height: min(78vh, 640px) !important;
+  opacity: 1 !important;                 /* kills VividQC 0.91 */
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background-color: var(--colorBg) !important;
+  border: 1px solid color-mix(in srgb, var(--colorFg) 10%, transparent) !important;
+  box-shadow:
+    0 24px 64px -16px rgba(0, 0, 0, 0.45),
+    0 6px 18px -8px rgba(0, 0, 0, 0.30) !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+html body .quick-command-container .quick-commands {
+  background-color: var(--colorBg) !important;
+  transition: none !important;           /* no per-keystroke max-height jiggle */
+}
+
+/* ---------- Search field ---------- */
+html body .quick-command-container .quick-command-search {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  letter-spacing: -0.01em !important;
+  padding: 14px 16px 13px 16px !important;
+  height: auto !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--colorFg) 9%, transparent) !important;
+  box-shadow: none !important;
+  caret-color: var(--colorFg);
+}
+
+html body .quick-command-container .quick-command-search-hint {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  letter-spacing: -0.01em !important;
+  padding: 14px 40px 13px 16px !important;
+  height: auto !important;
+  opacity: 1 !important;
+  color: color-mix(in srgb, var(--colorFg) 32%, transparent) !important;
+  pointer-events: none;
+}
+
+/* ---------- Section headers ---------- */
+html body .quick-command-container .quick-commands .quick-command-sectionheader {
+  padding: 0 16px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 16px !important;
+  letter-spacing: 0.02em !important;
+  color: color-mix(in srgb, var(--colorFg) 55%, transparent) !important;
+  opacity: 1 !important;
+}
+
+html body .quick-command-container .quick-commands .quick-command-sectionheader
+  .QuickCommand-Title--Subtitle {
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  margin: 0 0 0 8px !important;
+  color: color-mix(in srgb, var(--colorFg) 40%, transparent) !important;
+}
+
+/* ---------- Rows ---------- */
+html body .quick-command-container .quick-commands .quick-command {
+  box-sizing: border-box !important;
+  padding: 0 10px 0 16px !important;
+  font-size: 13px !important;
+  color: var(--colorFg) !important;
+  background-color: transparent !important;
+}
+
+/* inset pill; rows are absolutely positioned by ReactVirtualized, so this
+   anchors to the row without touching its box or height */
+html body .quick-command-container .quick-commands .quick-command::before {
+  content: "";
+  position: absolute;
+  inset: 1px 6px;
+  border-radius: 7px;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
+html body .quick-command-container .quick-commands .quick-command {
+  isolation: isolate;                    /* keeps the -1 layer above the row bg */
+}
+
+html body .hasfocus .quick-command-container .quick-commands
+  .quick-command[data-selected] {
+  background-color: transparent !important;
+  color: var(--colorFg) !important;
+}
+html body .hasfocus .quick-command-container .quick-commands
+  .quick-command[data-selected]::before {
+  background-color: color-mix(in srgb, var(--colorFg) 9%, transparent);
+}
+html body .isblurred .quick-command-container .quick-commands
+  .quick-command[data-selected] {
+  background-color: transparent !important;
+  color: var(--colorFg) !important;
+}
+html body .isblurred .quick-command-container .quick-commands
+  .quick-command[data-selected]::before {
+  background-color: color-mix(in srgb, var(--colorFg) 6%, transparent);
+}
+
+html body .quick-command-container .quick-commands .quick-command-favicon,
+html body .quick-command-container .quick-commands .quick-command-workspace-icon {
+  flex: 0 0 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: auto 8px auto 0 !important;
+  opacity: 0.9;
+}
+
+html body .quick-command-container .quick-commands .quick-command-title {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: var(--colorFg) !important;
+  margin: auto 6px auto 0 !important;
+}
+
+html body .quick-command-container .quick-commands .quick-command-url {
+  font-size: 12px !important;
+  opacity: 1 !important;
+  color: color-mix(in srgb, var(--colorFg) 42%, transparent) !important;
+}
+
+html body .quick-command-container .quick-commands .quick-command-timestamp,
+html body .quick-command-container .quick-commands .item-count {
+  background-color: transparent !important;
+  color: color-mix(in srgb, var(--colorFg) 38%, transparent) !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: auto 0 auto 10px !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* UNVERIFIED: shortcut-hint class is not in the rules I was given.
+   .quick-command-meta is the only right-aligned container visible. */
+html body .quick-command-container .quick-commands .quick-command-meta {
+  font-size: 11px !important;
+  color: color-mix(in srgb, var(--colorFg) 38%, transparent) !important;
+  font-variant-numeric: tabular-nums;
+  margin: auto 0 auto auto !important;
+}
+
+/* ---------- Tip bar ---------- */
+html body .quick-command-container .quick-command-tip {
+  padding: 8px 16px !important;
+  border-top: 1px solid color-mix(in srgb, var(--colorFg) 8%, transparent) !important;
+}
+html body .quick-command-container .quick-command-tip-content {
+  font-size: 11px !important;
+  color: color-mix(in srgb, var(--colorFg) 45%, transparent) !important;
+}
+
+/* ---------- Scrollbar: scoped to this modal only ---------- */
+html body .quick-command-container .VivaldiList::-webkit-scrollbar,
+html body .quick-command-container .ReactVirtualized__Grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Material variant, opt-in only — swap the panel background for:
+   background-color: color-mix(in srgb, var(--colorBg) 88%, transparent) !important;
+   backdrop-filter: blur(30px) saturate(1.8);
+   and add: .quick-commands { background-color: transparent !important; } */
