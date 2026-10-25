@@ -183,3 +183,11 @@ html body .quick-command-container .ReactVirtualized__Grid::-webkit-scrollbar {
    background-color: color-mix(in srgb, var(--colorBg) 88%, transparent) !important;
    backdrop-filter: blur(30px) saturate(1.8);
    and add: .quick-commands { background-color: transparent !important; } */
+
+
+/* No open animation on the box around Quick Commands. Vivaldi slides it in ("dropfade", 0.2 s), and while that
+   runs the panel is positioned against the moving box instead of the window: it showed up near the middle,
+   drifted, then jumped up to its real place. Checked live: without it, the panel appears in place at once. */
+html body .qc-modal {
+  animation: none !important;
+}
