@@ -1,0 +1,14 @@
+/* calm-split-view.css: a calmer frame around the active page in split view (tiled tabs).
+   Vivaldi draws a 2px accent-coloured outline; this makes it a 1px neutral hairline, like a macOS window edge.
+   It still shows which side has focus, and fades further when Vivaldi isn't the focused app.
+   To undo: delete this file and restart Vivaldi. */
+
+#app .hasfocus#browser:not(.narrow-tiling) .tile:has(> .tiled.active.visible)::after {
+  outline-width: 1px !important;
+  outline-color: color-mix(in srgb, var(--colorFg) 22%, transparent) !important;
+}
+
+#app .isblurred#browser:not(.narrow-tiling) .tile:has(> .tiled.active.visible)::after {
+  outline-width: 1px !important;
+  outline-color: color-mix(in srgb, var(--colorFg) 10%, transparent) !important;
+}

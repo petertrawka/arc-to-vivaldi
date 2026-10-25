@@ -20,7 +20,7 @@ _Vivaldi on macOS, using this kit (Nordic Dark Fjord theme)._
 
 | | What it does |
 |---|---|
-| `css/` | Eleven small style tweaks. Each one works on its own, so take only what you like |
+| `css/` | Twelve small style tweaks. Each one works on its own, so take only what you like |
 | `themes/` | 12 Nordic themes: six muted accents (Sage, Fjord, Clay, Sand, Heather, Moss), each in a dark and a light version |
 | `tools/arc_to_bookmarks.py` | Reads your Arc Spaces and writes one bookmarks file (one folder per Space) that Vivaldi can import |
 
@@ -67,6 +67,7 @@ Copy the files you want from `arc-to-vivaldi-main/css/` into `vivaldi-css`:
 | `calm-polish.css` | Apple-style finish: small grey workspace label, one title size, quiet tab counts, titles fade instead of cutting off, even spacing, no bounce when the sidebar slides in | No |
 | `calm-wide-stacks.css` | Sidebar widens to 420px when a stack's second column opens, so names fit; icons stay in exactly the same spot when the column folds | Yes: needs PeekTabbar |
 | `calm-quick-commands.css` | Quick Commands made solid and quiet: no see-through panel, a grey pill for the selected row, one left edge, no animation | No |
+| `calm-split-view.css` | Split view: a 1px neutral hairline around the active page instead of the thick coloured frame | No |
 | `no-nav-buttons.css` | Removes Back, Forward and Reload from the sidebar, for people who use ⌘[ ⌘] ⌘R | No |
 
 ### 4. Optional: add the Awesome-Vivaldi base (for the slide-out tab bar)
